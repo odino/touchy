@@ -5,6 +5,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/goji/httpauth"
 	"github.com/gorilla/mux"
 	"net"
 	"net/http"
@@ -62,12 +63,19 @@ func welcome(ip string, port string) {
 func main() {
 	localIp := getLocalIP()
 	port := getPort()
+	user := os.Getenv("HTTP_USER")
+	passwd := os.Getenv("HTTP_PASSWD")
 
 	welcome(localIp, port)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/press/{keys}", h.PressHandler)
 
-	http.Handle("/", r)
+	if (user != "") && (passwd != "") {
+		http.Handle("/", httpauth.SimpleBasicAuth(user, passwd)(r))
+	} else {
+		http.Handle("/", r)
+	}
+
 	http.ListenAndServe(":"+port, nil)
 }
