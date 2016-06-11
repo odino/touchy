@@ -1,3 +1,6 @@
 test
 touchy
 gin-bin
+static/node_modules
+static/compiled.js
+static/bundle.js

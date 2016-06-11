@@ -6,13 +6,18 @@ install:
 	go get github.com/gorilla/mux
 	go get github.com/goji/httpauth
 	go get github.com/micmonay/keybd_event
-build:
+	@echo "Installing frontend dependencies..."
+	cd static && npm install
+build: frontend
 	@echo "Compiling static assets..."
-	$$GOPATH/bin/go-bindata -pkg http -o http/bindata.go static/...
+	$$GOPATH/bin/go-bindata -pkg http -o http/bindata.go static/bundle.js static/index.html
 	@echo "Formatting source code..."
 	go fmt ./...
 	@echo "Building..."
 	go build -o touchy main.go
+frontend:
+	@echo "Compiling frontend with babel + webpack..."
+	cd static && babel index.js > compiled.js && webpack ./compiled.js bundle.js
 run:
 	@echo "Running the server..."
 	@$$GOPATH/bin/gin -a 8080 main.go -t .

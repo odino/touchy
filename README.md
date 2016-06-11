@@ -23,6 +23,12 @@ TBD
 
 ## Contributing
 
+> Presequisites:
+>
+> * go 1.4 or above
+> * babel installed globally
+> * webpack installed globally
+
 As a dev, you might want to run `touchy` locally. Just clone this repo
 and then run `make`:
 
