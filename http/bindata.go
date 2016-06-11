@@ -203,10 +203,10 @@ func AssetNames() []string {
 
 // _bindata is a table, holding each asset generator, mapped to its name.
 var _bindata = map[string]func() (*asset, error){
-	"static/index.html": staticIndexHtml,
+	"static/index.html":                  staticIndexHtml,
 	"static/vendor/babel-browser.min.js": staticVendorBabelBrowserMinJs,
-	"static/vendor/react-dom.min.js": staticVendorReactDomMinJs,
-	"static/vendor/react.min.js": staticVendorReactMinJs,
+	"static/vendor/react-dom.min.js":     staticVendorReactDomMinJs,
+	"static/vendor/react.min.js":         staticVendorReactMinJs,
 }
 
 // AssetDir returns the file names below a certain
@@ -248,13 +248,14 @@ type bintree struct {
 	Func     func() (*asset, error)
 	Children map[string]*bintree
 }
+
 var _bintree = &bintree{nil, map[string]*bintree{
 	"static": &bintree{nil, map[string]*bintree{
 		"index.html": &bintree{staticIndexHtml, map[string]*bintree{}},
 		"vendor": &bintree{nil, map[string]*bintree{
 			"babel-browser.min.js": &bintree{staticVendorBabelBrowserMinJs, map[string]*bintree{}},
-			"react-dom.min.js": &bintree{staticVendorReactDomMinJs, map[string]*bintree{}},
-			"react.min.js": &bintree{staticVendorReactMinJs, map[string]*bintree{}},
+			"react-dom.min.js":     &bintree{staticVendorReactDomMinJs, map[string]*bintree{}},
+			"react.min.js":         &bintree{staticVendorReactMinJs, map[string]*bintree{}},
 		}},
 	}},
 }}
@@ -305,4 +306,3 @@ func _filePath(dir, name string) string {
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
 	return filepath.Join(append([]string{dir}, strings.Split(cannonicalName, "/")...)...)
 }
-

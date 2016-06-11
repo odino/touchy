@@ -23,7 +23,26 @@ TBD
 
 ## Contributing
 
-TBD
+As a dev, you might want to run `touchy` locally. Just clone this repo
+and then run `make`:
+
+```
+~/projects/go/src/github.com/odino/touchy (master ✘)✚ ᐅ make
+Installing go packages...
+go get -u github.com/jteeuwen/go-bindata/...
+go get github.com/gorilla/mux
+go get github.com/goji/httpauth
+go get github.com/micmonay/keybd_event
+Compiling static assets...
+$GOPATH/bin/go-bindata -pkg http -o http/bindata.go static/...
+Formatting source code...
+go fmt ./...
+http/bindata.go
+Building...
+go build -o touchy main.go
+Running the server...
+Aye, here we are: connect to http://192.168.0.112:8080 and enjoy!
+```
 
 ## Why?
 
