@@ -84,7 +84,7 @@ func staticBundleJs() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "static/bundle.js", size: 1153086, mode: os.FileMode(436), modTime: time.Unix(1465674001, 0)}
+	info := bindataFileInfo{name: "static/bundle.js", size: 1153086, mode: os.FileMode(436), modTime: time.Unix(1465675201, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
