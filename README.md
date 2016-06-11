@@ -67,15 +67,14 @@ Aye, here we are: connect to http://192.168.0.112:8080 and enjoy!
 ```
 
 For now I just mapped 4 buttons (up / down / left / right) and the interface
-looks pretty crappy, but I'm open to add /  change stuff if requested.
-
-Pull requests are always welcome!
+looks pretty crappy, but I'm open to add /  change stuff if requested:
+pull requests are always welcome!
 
 ## Why?
 
 I bought one of those Logitech presenters and it seemed very cool -- until
 my second conference using the controller, as I forgot it was turned on
-and the batteries were drained, thus I started looking for a solution
+and the batteries got drained, thus I started looking for a solution
 that would involve less stuff to remember (lazyness as a virtue).
 
 At the same time, I wanted to refresh my rusty Go skills, and wanted
@@ -86,7 +85,7 @@ you do? :-)
 
 ## Tests & known issues
 
-I want to add some very simple tests for the Go server. There isn't much
+I want to add some very simple tests for the Go server: there isn't much
 I wrote myself, so I'll be honest and admit that tests arent the #1 priority
 as of now.
 
