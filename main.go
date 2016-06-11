@@ -70,6 +70,9 @@ func main() {
 
 	r := mux.NewRouter()
 	r.HandleFunc("/press/{keys}", h.PressHandler)
+	r.HandleFunc("/", h.HomeHandler)
+	r.HandleFunc("/static/{asset:(.*)}", h.StaticHandler)
+	r.NotFoundHandler = http.HandlerFunc(h.NotFoundHandler)
 
 	if (user != "") && (passwd != "") {
 		http.Handle("/", httpauth.SimpleBasicAuth(user, passwd)(r))
