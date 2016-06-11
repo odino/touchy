@@ -2,6 +2,7 @@ scratch: install build run
 install:
 	@echo "Installing go packages..."
 	go get -u github.com/jteeuwen/go-bindata/...
+	go get github.com/codegangsta/gin
 	go get github.com/gorilla/mux
 	go get github.com/goji/httpauth
 	go get github.com/micmonay/keybd_event
@@ -14,4 +15,4 @@ build:
 	go build -o touchy main.go
 run:
 	@echo "Running the server..."
-	@./touchy
+	@$$GOPATH/bin/gin -a 8080 main.go -t .
