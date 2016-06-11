@@ -11,15 +11,31 @@ having to install any additional software.
 
 ## Usage
 
-TBD
+[Download the binary](https://github.com/odino/touchy/releases) and launch it, you should see something like:
+
+```
+~/projects/go/src/github.com/odino/touchy (master ✘)✹ ᐅ ./touchy
+Aye, here we are: connect to http://192.168.0.112:8080 and enjoy!
+```
+
+Now, assuming that your phone is connected to the same network of your
+laptop, open `http://192.168.0.112:8080` and have fun!
+
+By default, `touchy` will run on port `8080`, but you can customize that
+with the `HTTP_PORT` environment variable.
+
+![frontend](https://raw.githubusercontent.com/odino/touchy/master/bin/images/frontend.png?token=AAUC5KstLjZrxC8o-TgevSvKHJivQRE5ks5XZawkwA%3D%3D)
 
 ## Authentication
 
-TBD
+You can even protect the server with basic HTTP authentication by
+setting the environment variables `HTTP_USER` and `HTTP_PASSWD`.
 
 ## License
 
-TBD
+[MIT](https://opensource.org/licenses/MIT)
+
+> Basically: do as you wish, you're on your own.
 
 ## Contributing
 
@@ -50,10 +66,28 @@ Running the server...
 Aye, here we are: connect to http://192.168.0.112:8080 and enjoy!
 ```
 
+For now I just mapped 4 buttons (up / down / left / right) and the interface
+looks pretty crappy, but I'm open to add /  change stuff if requested.
+
+Pull requests are always welcome!
+
 ## Why?
 
-TBD
+I bought one of those Logitech presenters and it seemed very cool -- until
+my second conference using the controller, as I forgot it was turned on
+and the batteries were drained, thus I started looking for a solution
+that would involve less stuff to remember (lazyness as a virtue).
 
-## Tests
+At the same time, I wanted to refresh my rusty Go skills, and wanted
+to try react + babel + webpack on one of my OS projects.
 
-TBD
+So, with a weekend in front of you and a patient wife, what would
+you do? :-)
+
+## Tests & known issues
+
+I want to add some very simple tests for the Go server. There isn't much
+I wrote myself, so I'll be honest and admit that tests arent the #1 priority
+as of now.
+
+There's currently an issue that prevents me from publishing [some binaries](https://github.com/micmonay/keybd_event/issues/2).
