@@ -5,7 +5,7 @@
 > Remote control for your laptop / desktop, over HTTP.
 
 Touchy provides a remote keyboard for your workstation:
-it is perfect for presentations / conferencing to be able
+It is perfect for presentations / conferencing, to be able
 to control your laptop directly from your phone, without
 having to install any additional software.
 
@@ -18,7 +18,7 @@ having to install any additional software.
 Aye, here we are: connect to http://192.168.0.112:8080 and enjoy!
 ```
 
-Now, assuming that your phone is connected to the same network of your
+Now, assuming that your phone is connected to the same network as your
 laptop, open `http://192.168.0.112:8080` and have fun!
 
 By default, `touchy` will run on port `8080`, but you can customize that
@@ -39,7 +39,7 @@ setting the environment variables `HTTP_USER` and `HTTP_PASSWD`.
 
 ## Contributing
 
-> Presequisites:
+> Prerequisites:
 >
 > * go 1.4 or above
 > * babel installed globally
@@ -67,15 +67,15 @@ Aye, here we are: connect to http://192.168.0.112:8080 and enjoy!
 ```
 
 For now I just mapped 4 buttons (up / down / left / right) and the interface
-looks pretty crappy, but I'm open to add /  change stuff if requested:
+looks pretty crappy, but I'm open to adding /  changing stuff, if requested:
 pull requests are always welcome!
 
 ## Why?
 
 I bought one of those Logitech presenters and it seemed very cool -- until
 my second conference using the controller, as I forgot it was turned on
-and the batteries got drained, thus I started looking for a solution
-that would involve less stuff to remember (lazyness as a virtue).
+and the batteries got drained. Thus, I started looking for a solution
+that would involve less stuff to remember (laziness is a virtue).
 
 At the same time, I wanted to refresh my rusty Go skills, and wanted
 to try react + babel + webpack on one of my OS projects.
@@ -86,7 +86,7 @@ you do? :-)
 ## Tests & known issues
 
 I want to add some very simple tests for the Go server: there isn't much
-I wrote myself, so I'll be honest and admit that tests arent the #1 priority
+I wrote myself, so I'll be honest and admit that tests aren't the #1 priority
 as of now.
 
 There's currently an issue that prevents me from publishing [some binaries](https://github.com/micmonay/keybd_event/issues/2).
