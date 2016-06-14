@@ -5,3 +5,4 @@ static/node_modules
 static/compiled.js
 static/bundle.js
 touchy_*
+http/bindata.go
