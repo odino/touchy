@@ -25,4 +25,4 @@ release: build
 	@echo "Building docker image to cross-compile touchy..."
 	docker build -t touchy .
 	@echo "Compiling touchy for multiple archs..."
-	docker run -ti -v $$(pwd):/go/src/github.com/odino/touchy touchy gox
+	docker run -ti -v $$(pwd):/go/src/github.com/odino/touchy touchy
