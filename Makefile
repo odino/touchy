@@ -26,3 +26,4 @@ release: build
 	docker build -t touchy .
 	@echo "Compiling touchy for multiple archs..."
 	docker run -ti -v $$(pwd):/go/src/github.com/odino/touchy touchy
+dev: build run
