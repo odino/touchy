@@ -24,7 +24,7 @@ laptop, open `http://192.168.0.112:8080` and have fun!
 By default, `touchy` will run on port `8080`, but you can customize that
 with the `HTTP_PORT` environment variable.
 
-![frontend](https://raw.githubusercontent.com/odino/touchy/master/bin/images/frontend.png?token=AAUC5KstLjZrxC8o-TgevSvKHJivQRE5ks5XZawkwA%3D%3D)
+![frontend](https://cloud.githubusercontent.com/assets/328420/16094131/cb2bd3f2-334f-11e6-90a9-9e4ad533b382.png)
 
 ## Authentication
 
