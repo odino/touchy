@@ -77,6 +77,17 @@ const App = React.createClass({
   },
 
   /**
+   * Action that encapsulate all the logic we need
+   * to do when a valid swipe happens.
+   */
+  swipe(direction) {
+    this.press(direction)
+    this.flash()
+    this.setState({...this.getInitialState(), text: DIRECTIONS[direction]})
+    window.navigator.vibrate && window.navigator.vibrate(150);
+  },
+
+  /**
    * When touch is over, let's figure out if we
    * have to trigger a key press.
    * First we check if this was a single click:
@@ -91,9 +102,7 @@ const App = React.createClass({
       let direction = this.getSwipeDirection()
 
       if (direction) {
-        this.press(direction)
-        this.flash()
-        this.setState({...this.getInitialState(), text: DIRECTIONS[direction]})
+        this.swipe(direction)
       }
 
       e.preventDefault();
