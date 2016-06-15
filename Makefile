@@ -10,7 +10,7 @@ install:
 	cd static && npm install
 build: frontend
 	@echo "Compiling static assets..."
-	$$GOPATH/bin/go-bindata -pkg http -o http/bindata.go static/bundle.js static/index.html
+	$$GOPATH/bin/go-bindata -pkg http -o http/bindata.go static/bundle.js static/index.html static/font.woff2
 	@echo "Formatting source code..."
 	go fmt ./...
 	@echo "Building..."
@@ -24,6 +24,8 @@ run:
 release: build
 	@echo "Building docker image to cross-compile touchy..."
 	docker build -t touchy .
+	@echo "Removing previous builds..."
+	rm -rf ./touchy_*
 	@echo "Compiling touchy for multiple archs..."
 	docker run -ti -v $$(pwd):/go/src/github.com/odino/touchy touchy
 dev: build run
