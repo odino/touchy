@@ -66,13 +66,11 @@ const App = React.createClass({
    * If the swipe didn't cross half the screen,
    * we discard it.
    */
-  getSwipeDirection() {
-    let direction = this.state.from < midPoint ? "right" : "left";
-
-    if (direction === "right" && this.state.to > midPoint) {
-      return "right"
-    } else if (direction === "left" && this.state.to < midPoint) {
+  getDirection() {
+    if (this.state.from < midPoint && this.state.to > midPoint) {
       return "left"
+    } else if (this.state.from > midPoint && this.state.to < midPoint) {
+      return "right"
     }
   },
 
@@ -99,7 +97,7 @@ const App = React.createClass({
     let singleClick = !this.state.to;
 
     if (!singleClick) {
-      let direction = this.getSwipeDirection()
+      let direction = this.getDirection()
 
       if (direction) {
         this.swipe(direction)
