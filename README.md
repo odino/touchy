@@ -1,4 +1,4 @@
-<img align="right" width="250px" src="https://cloud.githubusercontent.com/assets/328420/16094131/cb2bd3f2-334f-11e6-90a9-9e4ad533b382.png" />
+<img align="right" width="250px" src="https://raw.githubusercontent.com/odino/touchy/master/touchy.gif" />
 
 # Touchy
 
